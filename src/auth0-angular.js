@@ -330,7 +330,7 @@
           if (to.data && to.data.requiresLogin) {
             if (!auth.isAuthenticated && !auth.refreshTokenPromise) {
               e.preventDefault();
-              $injector.get('$state').go(config.loginState);
+              $injector.get('$state').go(config.loginState, { returnTo: to });
             }
           }
         });
